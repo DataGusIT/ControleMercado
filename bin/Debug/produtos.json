@@ -1,0 +1,11 @@
+[
+  {
+    "Codigo": 1,
+    "Nome": "Coca-Cola",
+    "Descricao": "Refrigerante",
+    "Preco": 15.00,
+    "QuantidadeEmEstoque": 29,
+    "EstoqueMinimo": 10,
+    "DataCadastro": "2025-03-10T15:22:29.1279713-03:00"
+  }
+]

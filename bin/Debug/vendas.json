@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "Itens": [
+      {
+        "CodigoProduto": 1,
+        "NomeProduto": "Coca-Cola",
+        "Quantidade": 1,
+        "PrecoUnitario": 15.00,
+        "Subtotal": 15.00
+      }
+    ],
+    "DataVenda": "2025-03-10T15:26:47.2138466-03:00",
+    "ValorTotal": 15.00
+  }
+]
