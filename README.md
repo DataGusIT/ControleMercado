@@ -1,162 +1,107 @@
-# Sistema de Gerenciamento de Mini Mercado
 
-Um aplicativo de console em C# para gerenciar o estoque e vendas de um mini mercado, desenvolvido como projeto prático de programação orientada a objetos.
+### README Padronizado
 
-## 📋 Funcionalidades
+# Sistema de Gestão de Mini Mercado
 
-O sistema oferece as seguintes funcionalidades:
+> Aplicação de console em C# para gestão de estoque e vendas de um mini mercado, focada na aplicação de conceitos de Programação Orientada a Objetos.
 
-- **Gerenciamento de Produtos**
-  - Cadastrar novos produtos
-  - Listar todos os produtos
-  - Buscar produtos por código ou nome
-  - Atualizar informações de produtos
-  - Excluir produtos
+[![Status](https://img.shields.io/badge/Status-Funcional-success)](https://github.com/seu-usuario/mini-mercado-csharp)
+[![C#](https://img.shields.io/badge/C%23-.NET-239120)](https://docs.microsoft.com/pt-br/dotnet/csharp/)
+[![.NET](https://img.shields.io/badge/.NET-6.0+-512BD4)](https://dotnet.microsoft.com/)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 
-- **Gerenciamento de Vendas**
-  - Registrar vendas de produtos
-  - Atualização automática do estoque após vendas
-  - Cancelamento de vendas em andamento
+## Sobre o Projeto
 
-- **Relatórios**
-  - Produtos com estoque abaixo do mínimo
-  - Histórico de vendas realizadas
-  - Estatísticas de vendas (total, valor, itens)
+O **Sistema de Gerenciamento de Mini Mercado** é uma aplicação de console desenvolvida em C# como um projeto prático para aplicar e solidificar conceitos de **Programação Orientada a Objetos (POO)**. Ele simula as operações essenciais de um pequeno comércio, como controle de estoque e registro de vendas, com persistência de dados em arquivos JSON para manter as informações entre as execuções.
 
-- **Persistência de Dados**
-  - Armazenamento de dados em arquivos JSON
-  - Manutenção dos dados entre execuções do programa
+## ✨ Funcionalidades
 
-## 🛠️ Estrutura do Projeto
+### 📦 Gestão de Produtos (CRUD)
+-   Cadastro, listagem, busca, atualização e exclusão de produtos.
+-   Validação para impedir códigos duplicados.
 
-O sistema é organizado nas seguintes classes principais:
+### 🛒 Registro de Vendas
+-   Lançamento de vendas com múltiplos itens.
+-   Atualização automática da quantidade de produtos em estoque após cada venda.
+-   Verificação de disponibilidade de estoque antes de confirmar a venda.
 
-- `Produto`: Representa os produtos do mini mercado
-- `Estoque`: Gerencia a lista de produtos e operações relacionadas
-- `Venda`: Representa uma venda com seus itens
-- `ItemVenda`: Representa um item dentro de uma venda
-- `GerenciadorVendas`: Gerencia as operações de vendas
-- `Sistema`: Controla a interface do usuário no console
+### 📊 Geração de Relatórios
+-   Listagem de produtos com estoque abaixo do mínimo definido.
+-   Consulta ao histórico completo de vendas realizadas.
 
-## 📝 Campos do Produto
+### 💾 Persistência de Dados
+-   Todos os dados de produtos e vendas são salvos em arquivos `produtos.json` e `vendas.json`, garantindo que as informações não sejam perdidas.
 
-Cada produto possui os seguintes atributos:
+## Tecnologias
 
-| Campo | Descrição |
-|-------|-----------|
-| Código | Identificador único do produto |
-| Nome | Nome do produto |
-| Descrição | Descrição detalhada do produto |
-| Preço | Valor unitário de venda |
-| QuantidadeEmEstoque | Quantidade disponível em estoque |
-| EstoqueMinimo | Quantidade mínima que deve haver em estoque |
-| DataCadastro | Data de cadastro do produto |
+### Core
+-   **C#** - Linguagem principal.
+-   **.NET 6.0+** - Plataforma de desenvolvimento.
 
-## 📋 Menu do Sistema
+### Dados
+-   **Newtonsoft.Json** - Biblioteca para serialização e desserialização de dados em formato JSON.
 
-O sistema apresenta as seguintes opções no menu principal:
+## Pré-requisitos
 
-1. Cadastrar Produto
-2. Listar Produtos
-3. Buscar Produto
-4. Atualizar Produto
-5. Excluir Produto
-6. Realizar Venda
-7. Gerar Relatórios
-8. Sair
+-   [.NET SDK 6.0](https://dotnet.microsoft.com/download/dotnet/6.0) ou superior.
 
-## 🚀 Como Executar
+## Instalação e Uso
 
-### Pré-requisitos
+1.  **Clone o repositório**
+    ```bash
+    git clone https://github.com/seu-usuario/mini-mercado-csharp.git
+    cd mini-mercado-csharp
+    ```
 
-- .NET Framework 4.7.2 ou superior
-- OU .NET Core 3.1 ou superior
-- OU .NET 5.0+
+2.  **Restaure as dependências**
+    O .NET CLI irá restaurar o pacote `Newtonsoft.Json` automaticamente. Se necessário, execute:
+    ```bash
+    dotnet restore
+    ```
 
-### Passos para Execução
+3.  **Execute a aplicação**
+    ```bash
+    dotnet run
+    ```
+    O menu interativo será exibido no seu console.
 
-1. Clone o repositório:
-   ```
-   git clone https://github.com/seu-usuario/mini-mercado.git
-   ```
+## Estrutura do Projeto
 
-2. Navegue até a pasta do projeto:
-   ```
-   cd mini-mercado
-   ```
+O sistema foi modelado utilizando os princípios da POO, com as seguintes classes principais:
 
-3. Compile o projeto:
-   ```
-   dotnet build
-   ```
+-   **`Produto`**: Representa a entidade produto com todos os seus atributos.
+-   **`Estoque`**: Classe responsável por gerenciar a coleção de produtos e suas operações (CRUD).
+-   **`Venda`** e **`ItemVenda`**: Representam uma transação de venda e os produtos contidos nela.
+-   **`GerenciadorVendas`**: Controla o processo de registro e histórico de vendas.
+-   **`Sistema`**: Orquestra a interação com o usuário através do menu de console.
 
-4. Execute o aplicativo:
-   ```
-   dotnet run
-   ```
+## Contribuição
 
-### Dependências
+Contribuições para melhorar o projeto são bem-vindas!
 
-O projeto utiliza:
-- `Newtonsoft.Json` para serialização e desserialização JSON
+1.  Faça um Fork do projeto.
+2.  Crie sua Feature Branch (`git checkout -b feature/NovaFuncionalidade`).
+3.  Faça Commit de suas mudanças (`git commit -m 'Adiciona funcionalidade X'`).
+4.  Faça Push para a Branch (`git push origin feature/NovaFuncionalidade`).
+5.  Abra um Pull Request.
 
-Para adicionar a dependência:
-```
-dotnet add package Newtonsoft.Json
-```
+## Suporte e Contato
 
-## 📂 Armazenamento de Dados
+-   **Email**: [g.moreno.souza05@gmail.com](mailto:g.moreno.souza05@gmail.com)
+-   **LinkedIn**: [Gustavo Moreno Souza](https://www.linkedin.com/in/gustavo-moreno-8a925b26a/)
 
-Os dados são armazenados em dois arquivos JSON:
-- `produtos.json`: Armazena informações dos produtos
-- `vendas.json`: Armazena o histórico de vendas realizadas
+## Licença
 
-## 📊 Exemplos de Uso
+Este projeto está licenciado sob uma Licença Proprietária.
 
-### Cadastrar um Produto
-
-1. Selecione a opção 1 no menu principal
-2. Informe os dados solicitados:
-   - Código (número inteiro único)
-   - Nome 
-   - Descrição
-   - Preço
-   - Quantidade em estoque
-   - Estoque mínimo
-
-### Realizar uma Venda
-
-1. Selecione a opção 6 no menu principal
-2. Escolha a opção 1 para adicionar um item
-3. Informe o código do produto
-4. Informe a quantidade desejada
-5. Repita os passos 2-4 para adicionar mais itens
-6. Escolha a opção 2 para finalizar a venda
-
-## 🔒 Validações Implementadas
-
-O sistema inclui as seguintes validações:
-
-- Não permite cadastro de produtos com código duplicado
-- Verifica se há estoque suficiente para vendas
-- Valida entradas numéricas e valores negativos
-- Impede exclusão de produtos não existentes
-- Verifica dados obrigatórios no cadastro
-
-## ✨ Possíveis Melhorias Futuras
-
-- Interface gráfica com Windows Forms ou WPF
-- Integração com banco de dados SQL
-- Controle de usuários e permissões
-- Impressão de comprovantes de vendas
-- Controle financeiro e caixa
-- Geração de relatórios mais detalhados
-- Controle de promoções e descontos
-
-## 👨‍💻 Autor
-
-[Gustavo Moreno Souza](https://github.com/seu-usuario)
+**Uso Restrito**: Este software foi desenvolvido para fins educacionais e de portfólio. Uso comercial ou redistribuição requer autorização expressa.
 
 ---
 
-Desenvolvido como projeto de estudo e prática de programação em C#.
+<div align="center">
+  Desenvolvido por Gustavo Moreno Souza
+  <br><br>
+  <a href="https://www.linkedin.com/in/gustavo-moreno-8a925b26a/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24" alt="LinkedIn"/>
+  </a>
+</div>
